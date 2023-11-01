@@ -11,10 +11,12 @@ class App extends Component {
   };
 
   render() {
+    const option = Object.keys(this.state);
+    console.log(option);
     return (
       <div>
         <MainTitle text="Please leave Feedback" />
-        <FeedbackOptions options={Object.keys(this.state)} />
+        <FeedbackOptions options={option} />
         <Statistics
           good={this.state.good}
           neutral={this.state.neutral}

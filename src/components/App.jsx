@@ -10,30 +10,24 @@ class App extends Component {
     bad: 0,
   };
 
-  handleClick = () => {
+  handleClick = event => {
+    // console.log(event.target);
+    const { name } = event.target;
     this.setState(prevState => {
-      console.log(prevState);
-      // const key = this.state
-      // const key2 = key.good
-      // console.log(key2);
-      
-      
-    })
-  }
- 
-  //   this.setState(prevState => {
-  //     const key = this.state
-  //     console.log(key);
-  //     console.log(prevState);
-  //     // return { prevState[key]: prevState[key] ++}
-  //   });
-  // }
-// }
+      // console.log(prevState);
+      return { [name]: prevState[name] + 1 };
+    });
+  };
+  countTotalFeedback = () => {
+    const total = Object.values(this.state).reduce((previousValue, number) => {
+      return previousValue + number;
+    }, 0);
+    return total;
+  };
 
   render() {
-     
     const option = Object.keys(this.state);
-   
+
     return (
       <div>
         <MainTitle text="Please leave Feedback" />
@@ -42,6 +36,7 @@ class App extends Component {
           good={this.state.good}
           neutral={this.state.neutral}
           bad={this.state.bad}
+          total={this.countTotalFeedback}
         />
       </div>
     );

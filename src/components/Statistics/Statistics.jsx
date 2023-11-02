@@ -1,7 +1,6 @@
-const Statistics = ({ good, neutral, bad, total }) => {
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <>
-      <h2>Statistic</h2>
       <ul>
         <li>
           <p>Good: {good}</p>
@@ -16,7 +15,7 @@ const Statistics = ({ good, neutral, bad, total }) => {
           <p>Total: {total}</p>
         </li>
         <li>
-          <p>Positive feedback:</p>
+          <p>Positive feedback: {positivePercentage}</p>
         </li>
       </ul>
     </>

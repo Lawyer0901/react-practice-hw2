@@ -47,7 +47,7 @@ class App extends Component {
           />
         </Section>
 
-        <Section title="Statistc">
+        <Section title="Statistics">
           {isShown ? (
             <Statistics
               good={this.state.good}

@@ -20,6 +20,7 @@ class App extends Component {
   };
   countTotalFeedback = () => {
     const total = Object.values(this.state).reduce((previousValue, number) => {
+      console.log(number);
       return previousValue + number;
     }, 0);
     return total;
@@ -36,7 +37,7 @@ class App extends Component {
           good={this.state.good}
           neutral={this.state.neutral}
           bad={this.state.bad}
-          total={this.countTotalFeedback}
+          total={this.countTotalFeedback()}
         />
       </div>
     );

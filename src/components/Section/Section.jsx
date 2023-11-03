@@ -1,7 +1,9 @@
+import { Text } from './Section.styled';
+
 const Section = ({ title, children }) => {
   return (
     <>
-      <h2>{title}</h2>
+      <Text>{title}</Text>
 
       {children}
     </>

@@ -1,10 +1,12 @@
+import { Button } from './FeedbackOptions.styled';
+
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return options.map(option => {
     // console.log(option);
     return (
-      <button key={option} name={option} onClick={onLeaveFeedback}>
+      <Button key={option} name={option} onClick={onLeaveFeedback}>
         {option}
-      </button>
+      </Button>
     );
   });
 };
